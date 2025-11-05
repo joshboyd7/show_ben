@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Property Insurance Expenditures</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Header -->
+  <div id="header">
+    <h1 class="title">Property Insurance Expenditures</h1>
+    <h2 class="subtitle">
+      <a href="https://www.nber.org/papers/w32579" target="_blank">From Ben Keys and Philip Mulder (2025)</a>
+    </h2>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <h2>Year</h2>
+    <label for="year-select" class="toggle-label">
+      <select id="year-select" name="year">
+        <option value="2024" selected>2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+      </select>
+    </label>
+
+    <h2>Map</h2>
+    <label class="toggle-label">
+      <input type="radio" name="layer" value="county" checked />
+      <span>County</span>
+    </label><br />
+    <label class="toggle-label">
+      <input type="radio" name="layer" value="state" />
+      <span>State</span>
+    </label><br /><br />
+
+    <h2>Download</h2>
+    <button id="download">Download Current Layer</button>
+    
+    <button id="download-all">Download All Data For Selected Geography</button>
+
+
+    <p class="author-links">
+      Our data on over 47 million observations of households’ property insurance expenditures from 2014–2024 are inferred from mortgage escrow payments.
+    </p>
+
+    <p class="author-links">
+      See more from 
+      <a href="https://sites.google.com/view/benkeys/home" target="_blank">Ben Keys</a> 
+      or 
+      <a href="https://sites.google.com/view/philipmulder/home" target="_blank">Philip Mulder</a>.
+    </p>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend" id="legend">
+    <strong>Annual Payment (Quantiles)</strong>
+    <div class="color-bar" id="legend-colors">
+      <!-- Color blocks inserted by script.js -->
+    </div>
+    <div class="labels" id="legend-labels">
+      <!-- Breakpoint labels inserted by script.js -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
